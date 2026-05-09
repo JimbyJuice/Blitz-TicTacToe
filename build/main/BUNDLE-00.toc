@@ -1,3 +1,0 @@
-([('main',
-   '/Users/YOUSHA_1/Desktop/Projects/TicTacToe/dist/main',
-   'EXECUTABLE')],)
