@@ -76,7 +76,6 @@ class TicTacToeUI:
         
         if len(self.game.queue) == 5:
             r, c = self.game.queue[0]
-            print(f"clearing warned cell ({r},{c}), current bg: {self.buttons[r][c].cget('bg')}")
             self.buttons[r][c].config(bg="#ffcc00", activebackground="#ffcc00", highlightbackground="#ffcc00")
             self.warnedCell =  (r, c)
         
