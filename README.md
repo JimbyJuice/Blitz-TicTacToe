@@ -9,10 +9,10 @@ A Tic Tac Toe desktop game built with Python and tkinter, featuring a unique hot
 
 ## Features
 
-- **Hot Seat Expiry** — each player can only have 3 moves on the board at any time. The oldest move disappears when a 4th is placed, keeping the board dynamic and prevent deadlocks.
-- **Expiry Warning** — the cell about to expire is highlighted in yellow so players can plan around it
-- **Win Detection** — horizontal, vertical and diagonal wins are all recognised, with the winning three cells highlighted in green
-- **Restart** — reset the board at any point without relaunching the app
+- **Hot Seat Expiry**: each player can only have 3 moves on the board at any time. The oldest move disappears when a 4th is placed, keeping the board dynamic and prevent deadlocks.
+- **Expiry Warning**: the cell about to expire is highlighted in yellow so players can plan around it
+- **Win Detection**: horizontal, vertical and diagonal wins are all recognised, with the winning three cells highlighted in green
+- **Restart**: reset the board at any point without relaunching the app
 
 ---
 
