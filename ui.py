@@ -1,5 +1,5 @@
 import tkinter as tk
-from game import TicTacToeGame, PLAYER1, playerToMove
+from game import TicTacToeGame, playerToMove, PLAYER1, PLAYER2
 
 class TicTacToeUI:
     def __init__(self):
@@ -21,7 +21,7 @@ class TicTacToeUI:
     def create_board(self):
         for row in range(3):
             for col in range(3):
-                btn = tk.Button(self.window, text=" ", width=8, height=4, font=("Arial", 20), command=lambda r=row, c=col: self._on_click(r, c))
+                btn = tk.Button(self.window, text=" ", width=8, height=5, font=("Arial", 20), command=lambda r=row, c=col: self._on_click(r, c))
                 btn.grid(row=row+1, column=col, padx=4, pady=4)
                 self.buttons[row][col] = btn
                 
@@ -29,21 +29,35 @@ class TicTacToeUI:
         if not self.game.make_move(row, col):
             return
         
-        self.buttons[row][col].config(text=self.game.get_symbol(row, col))
-        
         if self.game.expiredCell is not None:
             r, c = self.game.expiredCell
             self.buttons[r][c].config(text=" ")
             
+        self.buttons[row][col].config(text=self.game.get_symbol(row, col))
+            
         winner = self.game.check_winner()
         if winner is not None:
-            self.statusLabel.config(text=f"*** Player {winner} is the winner! ***")
+            if winner == PLAYER1:
+                self.statusLabel.config(text=f"*** Player {1} is the winner! ***")
+            elif winner == PLAYER2:
+                self.statusLabel.config(text=f"*** Player {2} is the winner! ***")
+                
             for row in self.buttons:
                 for btn in row:
                     btn.config(state=tk.DISABLED)
         else:
             current = self.game.currentPlayer
-            self.statusLabel.config(text=f"Player {current}'s turn ({playerToMove[current]})")
+            if current == PLAYER1:
+                self.statusLabel.config(text=f"Player {1}'s turn ({playerToMove[current]})")
+            elif current == PLAYER2:
+                self.statusLabel.config(text=f"Player {2}'s turn ({playerToMove[current]})")
     
     def run(self):
         self.window.mainloop()
+        
+    def _reset(self):
+        self.game._reset()
+        for row in self.buttons:
+            for btn in row:
+                btn.config(text=" ", state=tk.NORMAL)
+        self.statusLabel.config(text="Player 1's turn (O)")

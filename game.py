@@ -49,7 +49,7 @@ class TicTacToeGame:
         if len(self.queue) == 6:
             expired = self.queue.popleft()
             self.board[expired[0]][expired[1]] = UNSET
-            self.expiredCell= expired
+            self.expiredCell = expired
         
         self.board[row][col] = playerToMove[self.currentPlayer]
         self.currentPlayer = -self.currentPlayer
@@ -78,5 +78,5 @@ class TicTacToeGame:
     def get_symbol(self, row, col) -> str:
         return self.board[row][col]
     
-    def reset(self):
+    def _reset(self):
         self.__init__()
