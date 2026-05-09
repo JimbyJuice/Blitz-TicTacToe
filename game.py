@@ -9,11 +9,6 @@ UNSET = ' '
 playerToMove = {PLAYER1: KNOT, PLAYER2: CROSS}
 moveToPlayer = {KNOT: PLAYER1, CROSS: PLAYER2}
 
-# hot seat feature, show which cells are expiring
-# choose what char for each player
-# quit game button
-# play AI mode
-# real time multiplayer
 def checkVertical(board: list[list[chr]], playerSymbol: str):
     for c in range(3):
         if board[0][c] == playerSymbol and board[1][c] == playerSymbol and board[2][c] == playerSymbol:
