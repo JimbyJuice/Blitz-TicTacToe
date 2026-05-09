@@ -1,5 +1,5 @@
 # Blitz Tic Tac Toe 
-A Tic Tac Toe desktop game built with Python and tkinter, featuring a unique hot seat mechanic where moves expire after 3 turns to prevent perpetual draws in regular Tic Tac Toe.
+A Tic Tac Toe desktop game built with Python and tkinter, featuring a hot seat mechanic where moves expire after 3 turns to prevent perpetual draws like in regular Tic Tac Toe.
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?style=flat-square&logo=python)
 ![tkinter](https://img.shields.io/badge/GUI-tkinter-orange?style=flat-square)
